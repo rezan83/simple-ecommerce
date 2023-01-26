@@ -41,6 +41,7 @@ const changeProductInCart = (event, productId) => {
     productInCart.count = event.target.value;
     cartTotal.innerHTML = `Total: $${cartTotalCalc(shoppingCart)}`;
     cartPayBtn.disabled = !shoppingCart.length;
+    console.log("changeProductInCart")
 };
 
 const cartPopulate = () => {
@@ -62,7 +63,7 @@ const cartPopulate = () => {
                     <div class="product-card-price">
                     <p>Price: $${item.price}</p>
                     <p>X</p>
-                    <input type="number" onchange="changeProductInCart(event, ${item.id})" name="number" id="number" min="1" value="1">
+                    <input type="number" onchange="changeProductInCart(event, ${item.id})" name="number" id="number" min="1" value="${item.count}">
                     </div>
                 </div>
                 <button onclick="removeProductFromCart(${item.id})" class="btn">remove</button>
