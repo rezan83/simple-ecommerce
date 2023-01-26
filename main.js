@@ -1,5 +1,7 @@
 // add remove and cart total calc ########################
-const cartIcon = document.querySelector(".cart-shopping-count");
+const cartCount = document.querySelector(".cart-shopping-count");
+const cartIcon = document.querySelector(".fa-cart-shopping");
+// .fa-cart-shopping 
 const cartProductContainer = document.querySelector(".cart__product-container");
 const cartTotal = document.getElementById("cart__total");
 const cartPayBtn = document.querySelector(".cart__pay-btn");
@@ -8,9 +10,13 @@ let shoppingCart = [];
 
 const updateCart = () => {
     cartProductContainer.innerHTML = cartPopulate();
-    cartIcon.innerHTML = `${shoppingCart.length}`;
+    cartCount.innerHTML = `${shoppingCart.length}`;
+    cartIcon.classList.add("cart-count-changed")
     cartTotal.innerHTML = `Total: $${cartTotalCalc(shoppingCart)}`;
     cartPayBtn.disabled = !shoppingCart.length;
+    setTimeout(()=>{
+        cartIcon.classList.remove("cart-count-changed")
+    }, 500)
 };
 
 const cartTotalCalc = (allProducts) => {

@@ -80,14 +80,18 @@ nav a {
     position: relative;
 }
 #cart-link .fa-cart-shopping {
-    /* position: relative; */
     font-size: 3rem;
+    transition: all 0.3s;
+    transform: scale(1);
 }
-.cart-shopping-count {
+#cart-link .cart-shopping-count {
     position: absolute;
     color: var(--main-bg-color);
     z-index: 999;
     left: 1.2rem;
+}
+#cart-link .cart-count-changed {
+    transform: scale(1.5);
 }
 /* main */
 main {
@@ -95,7 +99,17 @@ main {
     place-items: center;
     min-height: 80vh;
 }
+/* the router element */
+#allPages {
+    width: 100%;
+    padding: 2rem;
+    display: grid;
+    place-items: center;
+}
 
+.allPages__page {
+    width: 100%;
+}
 /* home page */
 #products {
     display: block;
@@ -123,6 +137,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
+    border: 1px solid hsl(0, 0%, 85%);
 }
 .product-card img {
     width: 100%;
@@ -147,7 +162,7 @@ main {
     padding: 0 0 0 1rem;
 }
 
-/* car page */
+/* cart page */
 #cart {
     display: none;
 }
@@ -156,14 +171,23 @@ main {
     padding: 1rem;
     margin: 2rem 0;
 }
-.cart__pay-btn {
+.rowCards {
+    width: clamp(30rem, 30vw, 80rem);
     margin-top: 6rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.rowCards img {
+    width: 100%;
+}
+.cart__pay-btn {
     width: clamp(30rem, 30vw, 80rem);
 }
 .cart__pay-btn:disabled {
     cursor: default;
     background-color: hsl(0, 0%, 64%);
 }
+/* dtails page */
 #detail {
     display: none;
 }
@@ -176,6 +200,7 @@ main {
 .product-detail__btn {
     width: clamp(30rem, 50%, 60rem);
 }
+/* login page */
 #login {
     display: none;
 }
@@ -188,16 +213,6 @@ main {
 .login__btn-group a {
     color: black;
     background-color: aqua;
-}
-#allPages {
-    width: 100%;
-    padding: 2rem;
-    display: grid;
-    place-items: center;
-}
-
-.allPages__page {
-    width: 100%;
 }
 
 .login__form {
@@ -220,6 +235,7 @@ main {
 .login__form__btn {
     width: 15rem;
 }
+/* footer */
 footer {
     display: flex;
     width: 100%;
