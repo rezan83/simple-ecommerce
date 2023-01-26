@@ -1,12 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Montserrat&display=swap");
+/*  css reset */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
+/* vars */
 :root {
     --main-bg-color: hsl(261, 100%, 65%);
 }
+/* generic styling */
 html {
     font-size: 62.5%;
 }
@@ -14,6 +17,8 @@ html {
 body {
     font-size: 1.6rem;
     min-height: 100vh;
+
+    font-family: "Montserrat", sans-serif;
 }
 
 li {
@@ -25,6 +30,14 @@ a {
 h2,
 h3 {
     margin: 2rem 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Barlow Condensed", sans-serif;
 }
 .btn {
     padding: 1rem;
@@ -51,11 +64,12 @@ h3 {
 .flex-gap-sml {
     gap: 2rem;
 }
+/* navbar */
 nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 5rem;
+    height: 10rem;
     background-color: var(--main-bg-color);
 }
 
@@ -66,14 +80,23 @@ nav a {
     position: relative;
 }
 #cart-link .fa-cart-shopping {
-    position: absolute;
+    /* position: relative; */
+    font-size: 3rem;
 }
+.cart-shopping-count {
+    position: absolute;
+    color: var(--main-bg-color);
+    z-index: 999;
+    left: 1.2rem;
+}
+/* main */
 main {
     display: grid;
     place-items: center;
     min-height: 80vh;
 }
 
+/* home page */
 #products {
     display: block;
 }
@@ -119,10 +142,12 @@ main {
     justify-content: space-between;
     margin: 1rem 0;
 }
-.product-card-price input{
+.product-card-price input {
     width: 5rem;
     padding: 0 0 0 1rem;
 }
+
+/* car page */
 #cart {
     display: none;
 }
@@ -154,8 +179,9 @@ main {
 #login {
     display: none;
 }
-.login__btn-group{
+.login__btn-group {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }

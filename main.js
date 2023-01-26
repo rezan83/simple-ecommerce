@@ -19,7 +19,7 @@ const selectPage = (event, showPage) => {
 
 // ########################################################
 const productContainer = document.querySelector(".product-container");
-const cartIcon = document.querySelector(".fa-cart-shopping");
+const cartIcon = document.querySelector(".cart-shopping-count");
 const cartProductContainer = document.querySelector(".cart__product-container");
 const cartTotal = document.getElementById("cart__total");
 const cartPayBtn = document.querySelector(".cart__pay-btn");
